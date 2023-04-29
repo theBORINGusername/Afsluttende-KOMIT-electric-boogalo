@@ -1,0 +1,14 @@
+{
+  "name": "afsluttende-kom-it-projekt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "style": "sass --watch styles/scss/main.scss:styles/css/main.css"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
+}

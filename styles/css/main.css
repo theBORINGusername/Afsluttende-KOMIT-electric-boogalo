@@ -1,0 +1,184 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --color-grey: hsl(0, 0%, 95%);
+  --color-grey-dark: hsl(0, 0%, 80%);
+  --color-blue: hsl(198, 100%, 31%);
+  --color-blue-light: hsl(198, 100%, 41%);
+  --color-blue-dark: hsl(198, 100%, 21%);
+  --color-purple: hsl(268, 99%, 61%);
+  --color-orange: hsl(19, 100%, 50%);
+  --max-width: 1200px;
+  --def-border-nc: solid 3px;
+  --def-border: solid 3px var(--color-grey);
+  --def-border-dark: solid 3px var(--color-grey-dark);
+  --page-view-border: solid 3px var(--color-grey-dark);
+  --def-radius: 3px;
+  --def-box-shadow-nc: -1em 1em 0;
+  --def-padding: 1em;
+  --alt-padding: 0.5em 1em;
+  --font-size-normal: 22px;
+  --font-size-large: 22px;
+  --font-size-nav: 30px;
+  --font-weight-button: 600;
+  --font-weight-nav: 900;
+  --def-anime-time: 200ms;
+}
+
+*, ::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+input, textarea, button, select {
+  font: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.nav {
+  /* Nav er den overordnede container. Den er der for at vi kan alligne ul i centrum hele tiden samt at vi har en border som konstant er 100vw */
+  position: fixed;
+  left: 0;
+  right: 0;
+  border-bottom: var(--def-border);
+  background-color: #fff;
+}
+.nav-container {
+  /* Styler en ul som container */
+  display: flex;
+  align-items: center;
+  column-gap: var(--def-padding);
+  max-width: var(--max-width);
+  padding: var(--def-padding) 0;
+  margin: 0 auto;
+  list-style: none;
+}
+.nav-container-item {
+  /* Generel styling for nav items */
+  padding: var(--alt-padding);
+  font-size: var(--font-size-nav);
+  font-weight: var(--font-weight-nav);
+  border-radius: var(--def-radius);
+  /* Hover for alle items udover logo */
+  /* Vi har et text logo i vores nav */
+  /* Viser hvilket nav item du er inde på */
+  /* Gør at den næstsidste nav item kan aligne til højre samt dens venner til højre for den */
+}
+.nav-container-item:hover {
+  background-color: var(--color-blue-dark);
+  color: #fff;
+}
+.nav-container-item-logo {
+  font-size: var(--font-size-nav);
+  font-weight: var(--font-weight-nav);
+  text-transform: uppercase;
+  color: var(--color-blue-dark);
+}
+.nav-container-item-active {
+  background-color: var(--color-blue);
+  color: #fff;
+}
+.nav-container-item-right {
+  margin-left: auto;
+}
+
+.section {
+  border-bottom: var(--def-border);
+}
+.section-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.header {
+  margin-top: var(--def-padding);
+  padding: var(--def-padding);
+  border-radius: 3px 3px 0 0;
+  font-size: var(--font-size-large);
+}
+
+.level-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max-content, 350px));
+  justify-content: space-between;
+  column-gap: calc(2 * var(--def-padding));
+  row-gap: calc(2 * var(--def-padding));
+  padding: var(--def-padding) 0;
+}
+
+.level-item {
+  max-width: 350px;
+  border: var(--def-border);
+  transition: box-shadow ease-out var(--def-anime-time);
+}
+.level-item-empathy:hover {
+  box-shadow: var(--def-box-shadow-nc) var(--color-purple);
+  border: var(--def-border-nc) var(--color-purple);
+}
+.level-item-anger:hover {
+  box-shadow: var(--def-box-shadow-nc) var(--color-orange);
+  border: var(--def-border-nc) var(--color-orange);
+}
+.level-item-button {
+  display: block;
+  text-align: center;
+  padding: var(--alt-padding);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-button);
+  text-transform: uppercase;
+}
+.level-item-button:hover {
+  filter: brightness(110%);
+}
+
+#empathy {
+  background-color: var(--color-purple);
+  color: #fff;
+}
+
+#anger {
+  background-color: var(--color-orange);
+  color: #fff;
+}
+
+.bottom-arrow {
+  display: block;
+  max-width: var(--max-width);
+  padding: calc(2 * var(--def-padding));
+  border-radius: var(--def-radius);
+  margin: calc(2 * var(--def-padding)) auto;
+  text-align: center;
+  transition: var(--def-anime-time) all;
+}
+.bottom-arrow-empathy {
+  background-color: var(--color-purple);
+  color: #fff;
+}
+.bottom-arrow-empathy:hover {
+  filter: brightness(110%);
+}
+
+/*# sourceMappingURL=main.css.map */
