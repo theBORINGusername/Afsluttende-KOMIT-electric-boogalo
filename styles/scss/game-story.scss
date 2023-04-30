@@ -1,0 +1,98 @@
+.progress-bar {
+    --progress-bar-height: 1.2em;
+
+    position: relative;
+
+    height: var(--progress-bar-height);
+    width: 100%;
+    border-radius: 1000px;
+
+    background-color: var(--color-grey);
+    overflow: hidden;
+
+    transition: width, 100 ease;
+
+    &-progress {
+        width: 10%;
+        height: var(--progress-bar-height);
+        background-color: var(--color-purple);
+
+    }
+}
+
+.in-level-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto minmax(500px, auto) 150px;
+
+    height: 100vh;
+    height: 100dvh;
+
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    &-story {
+        padding: 0 var(--big-padding);
+        overflow-y: auto;
+    }
+
+    &-choices {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 5px;
+
+        border: var(--def-border);
+        border-bottom: none;
+        border-radius: var(--def-radius);
+        margin-bottom: var(--def-padding);
+        overflow: hidden;
+
+        background-color: var(--color-grey);
+
+        /* the item of the container that is called choices */
+        &-choice {
+            height: 100%;
+            min-width: 200px;
+            padding: var(--def-padding);
+
+            background-color: var(--color-purple);
+            transition: background-color var(--def-anime-time) ease ;
+
+            &:hover {
+                background-color: var(--color-purple-dark);
+            }
+        }
+    }
+}
+
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    column-gap: var(--def-padding);
+    padding: var(--def-padding) 0;
+
+    & > a > button {
+        height: 2em;
+    }
+}
+
+.story {
+    height: 200vh;
+}
+
+.person {
+    width: 250px;
+    padding: var(--def-padding);
+
+    color: #fff;
+    font-weight: var(--font-weight-button);
+    
+
+    &-1 {
+        background-color: var(--color-purple);
+    }
+
+    &-2 {
+        background-color: var(--color-purple-dark);
+    }
+}

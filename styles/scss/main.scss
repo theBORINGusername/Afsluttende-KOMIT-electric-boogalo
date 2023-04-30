@@ -1,4 +1,6 @@
+@use './game-story.scss';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 :root {
     --color-grey: hsl(0, 0%, 95%);
@@ -9,6 +11,7 @@
     --color-blue-dark: hsl(198, 100%, 21%);
 
     --color-purple: hsl(268, 99%, 61%);
+    --color-purple-dark: hsl(268, 99%, 55%);
     --color-orange: hsl(19, 100%, 50%);
 
     --max-width: 1200px;
@@ -18,11 +21,12 @@
     --def-border: solid 3px var(--color-grey);
     --def-border-dark: solid 3px var(--color-grey-dark);
     --page-view-border: solid 3px var(--color-grey-dark);
-    --def-radius: 3px;
+    --def-radius: 5px;
     //default box shadown no color
     --def-box-shadow-nc: -1em 1em 0;
 
     --def-padding: 1em;
+    --big-padding: 5em;
     --alt-padding: 0.5em 1em;
 
     --font-size-normal: 22px;
@@ -138,7 +142,7 @@ body {
 
 .header {
     margin-top: var(--def-padding);
-    padding: var(--def-padding);
+    padding: calc(2*var(--def-padding));
     border-radius: 3px 3px 0 0;
 
     font-size: var(--font-size-large);
@@ -149,14 +153,15 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(max-content, 350px));
     justify-content: space-between;
     column-gap: calc(2*var(--def-padding));
-    row-gap: calc(2*var(--def-padding));
+    row-gap: calc(4*var(--def-padding));
 
-    padding: var(--def-padding) 0;
+    padding: calc(2*var(--def-padding)) 0;
 }
 
 .level-item {
     max-width: 350px;
     border: var(--def-border);
+    border-radius: var(--def-radius);
     transition: box-shadow ease-out var(--def-anime-time);
 
     //hover for level items in the empathy section
